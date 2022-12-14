@@ -1,0 +1,38 @@
+- name: Home
+  path: /
+  section_id: home
+- name: Resources
+  section_id: resources
+  children:
+    - name: Bus, Trains &amp; Alerts
+      path: http://www.transitchicago.com/developers/
+    - name: DIVVY API
+      path: https://www.divvybikes.com/system-data
+    - name: GTFS
+      path: http://www.transitchicago.com/developers/gtfs.aspx
+    - name: Health Atlas API
+      path: https://api.chicagohealthatlas.org/api-docs/index.html
+    - name: Lead Safe
+      path: http://dev.cityofchicago.org/docs/lead-safe/
+    - name: Open 311
+      path: http://dev.cityofchicago.org/docs/open311
+    - name: OpenGrid Dev Docs
+      path: http://opengrid.readthedocs.io
+    - name: Plenario
+      path: http://plenar.io/
+- name: Open Data Portal
+  section_id: open_data_portal
+  children:
+    - name: Visit Portal
+      path: https://data.cityofchicago.org
+    - name: API documentation
+      path: https://dev.socrata.com
+- name: Projects
+  path: /projects/
+  section_id: projects
+- name: GitHub
+  path: https://www.github.com/Chicago
+  section_id: github
+- name: Blog
+  path: /blog/
+  section_id: blog

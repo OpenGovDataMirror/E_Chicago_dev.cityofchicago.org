@@ -1,0 +1,167 @@
+/* Modified from https://github.com/twitter/twitter.github.com
+(c) 2012 Twitter, Inc. and licensed under Apache License 2.0
+See NOTICE file for more information */
+
+#wrapper {
+  position: relative;
+  width: 110%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#shadow {
+  height: 400px;
+}
+
+#shadow, div.header, li.repo {
+  background: #C0E6F5;
+  -moz-box-shadow:    0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow:         0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#shadow h1 {
+  margin: 30px 0;
+}
+
+#shadow h1, #shadow p {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#shadow p {
+  font-size: 11px;
+  line-height: 2;
+}
+
+div.header {
+  height: 130px;
+}
+
+div.header h1, div.header p {
+  margin: 10px 15px 0;
+}
+
+div.header h1 {
+  margin-bottom: 10px;
+}
+
+ol {
+  list-style-type: none;
+}
+
+li.repo {
+  height: 200px;
+  text-align: center;
+}
+
+li.repo > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+li.repo a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+li.repo h2, li.repo h3, li.repo p {
+  margin: 10px 0px;
+}
+
+li.repo h2 {
+  margin-bottom: 2px;
+  max-width: 160px;
+  overflow: hidden;
+}
+
+li.repo h3 {
+  font-size: 13px;
+  margin-top: 35%;
+  color: black;
+}
+
+li.repo h4 {
+  font-size: 10px;
+  margin-top: 5px;
+  color: black;
+}
+
+/* Background colors for grid based on programming languages */
+
+.repo {
+  background-color: #C0E6F5;
+}
+
+.repo.javascript {
+  background-color: #62C3A5;
+}
+
+.repo.css {
+  background-color: #62C3A5; 
+}
+
+.repo.html {
+  background-color: #62C3A5; 
+}
+
+.repo.r {
+  background-color: #91CFEB;
+}
+
+.repo.ruby {
+  background-color: #F3815D;
+}
+
+.repo.java {
+  background-color: #5495A1;
+}
+
+.repo.python {
+  background-color: ##5495A1;
+}
+
+.repo.shell {
+  background-color: #B15A9E;
+}
+
+@keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
+@-moz-keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
+@-webkit-keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
+@-ms-keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
+
+@keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
+@-moz-keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
+@-webkit-keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
+@-ms-keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
+
+@keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
+@-moz-keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
+@-webkit-keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
+@-ms-keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
+
+.larry.size-smaller, .larry.size-small {
+  animation: small-swing 0.5s infinite ease-in-out;
+  -moz-animation: small-swing 0.5s infinite ease-in-out;
+  -webkit-animation: small-swing 0.5s infinite ease-in-out;
+  -ms-animation: small-swing 0.5s infinite ease-in-out;
+}
+
+.larry.size-medium, .larry.size-large {
+  animation: medium-swing 1.25s infinite ease-in-out;
+  -moz-animation: medium-swing 1.25s infinite ease-in-out;
+  -webkit-animation: medium-swing 1.25s infinite ease-in-out;
+  -ms-animation: medium-swing 1.25s infinite ease-in-out;
+}
+
+.larry.size-medium, .larry.size-fat {
+  animation: large-swing 1.5s infinite ease-in-out;
+  -moz-animation: large-swing 1.5s infinite ease-in-out;
+  -webkit-animation: large-swing 1.5s infinite ease-in-out;
+  -ms-animation: large-swing 1.5s infinite ease-in-out;
+}

@@ -1,0 +1,240 @@
+---
+layout: default
+section_id: home
+slides:
+  - bg: images/brown-line-wells-bridge.jpg
+    title:
+      text: Connect to transit data
+      animation: bottom-to-top
+      class: large-8 medium-11
+    buttons:
+      animation: bottom-to-top
+      class: medium-12
+      items:
+        - text: API Docs
+          url: http://www.transitchicago.com/developers/traintracker.aspx
+          class: boxed
+  - bg: images/natasha-taylor-179004.jpg
+    title:
+      text: Open data for researchers &amp; developers
+      animation: bottom-to-top
+      class: large-7 large-offset-5 medium-9 medium-offset-3
+    buttons:
+      animation: bottom-to-top
+      class: large-7 large-offset-5 medium-9 medium-offset-3
+      items:
+        - text: Visit Portal
+          url: https://data.cityofchicago.org
+        - text: View API Docs
+          url: http://dev.socrata.com
+          class: boxed
+  - bg: images/construction.jpg
+    title:
+      text: Open 311 APIs to request city services
+      animation: bottom-to-top
+      class: large-8 medium-11
+    buttons:
+      animation: bottom-to-top slow
+      class: medium-12
+      items:
+        - text: Open311 API Docs
+          url: http://dev.cityofchicago.org/docs/open311
+          class: boxed
+        - text: Service Tracker
+          url: http://servicetracker.cityofchicago.org
+boxes:
+  - icon_class: fa fa-bus
+    title: Transit Authority APIs
+    text:
+      Track the city buses, trains, advisories, and scheduled stops. See documentation on Chicago Transit Authority's <a href="http://www.transitchicago.com/developers/traintracker.aspx">Train Tracker</a>, <a href="http://www.transitchicago.com/developers/bustracker.aspx">Bus Tracker</a>, <a href="http://www.transitchicago.com/developers/alerts.aspx">customer alerts</a> and <a href="http://www.transitchicago.com/developers/gtfs.aspx">scheduled stops (GTFS)</a> at CTA's Developer Center.
+  - icon_class: fa fa-road
+    title: Open311 Service Tracker
+    text:
+      Develop applications that can <a href="http://dev.cityofchicago.org/docs/open311">open and close 311 requests for services</a> in the city ranging from filling potholes to fixing broken streetlights. Over a dozen services can be requested using the API that follows the Open311 API specification used by a dozen other cities.
+  - icon_class: fa fa-database
+    title: Open Data Portal API
+    text:
+      Chicago's <a href="https://dev.socrata.com/consumers/getting-started.html">Open Data Portal</a> contains 600 data sets ranging from crimes to beach water quality. The portal is hosted by Socrata, which has a robust API to quickly retrieve and query data. The Socrata Open Data API (SODA) documentation provides a great overview of the API with plenty of examples and <a href="https://dev.socrata.com/libraries/">SDK's</a> for a handful of popular programming languages.
+  - icon_class: fa fa-bicycle
+    title: DIVVY Bike Stations
+    text:
+      DIVVY bikeshare program is the largest in the world. <a href="http://feeds.divvybikes.com/stations/stations.json">This API endpoint</a> provides the availability of bicycles at each DIVVY station across the city. It is updated every minute and great for those who want to build a DIVVY app. Historical DIVVY <a href="https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations-Historical/eq45-8inv">bike availability</a> and <a href="https://data.cityofchicago.org/Transportation/Divvy-Trips-Dashboard/u94x-unre">bicycle trips</a> are available on the <a href="https://data.cityofchicago.org/">Open Data Portal</a>.
+milestones:
+  - from: 0
+    to: 2800000
+    title: Chicago Residents
+  - from: 0
+    to: 580
+    title: Data sets on Open Data Portal
+  - from: 0
+    to: 16000
+    title: Open311 API Calls
+  - from: 0
+    to: 38709060
+    title: Open Data page views
+
+testimonials:
+  - text: "In Chicago, we believe that the power of technology is driven by the people who use and benefit from it."
+    author: Chicago Tech Plan
+    position: 2015
+  - text: "Technology has the potential to propel Chicago to a future where government is increasingly transparent and effective and business is thriving."
+    author: Rahm Emanuel
+    position: Mayor of Chicago
+  - text: "Using data provided through an open, transparent government, the City is able to engage its residents in innovative ways available only to cities with this foundation of technology strength."
+    author: Chicago Tech Plan
+    position: Civic Innovation Strategy
+
+clients:
+  - images/cta-logo.png
+  - images/caps-logo.png
+  - images/divvy-logo.png
+  - images/city-seal-200-square.png
+  - images/service-tracker-logo.png
+
+---
+
+<div class='advanced mod modDefaultSlider'>
+  <div class='sequence' data-autostop='on' data-timeout='0'>
+    <a class='sequence-prev' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <a class='sequence-next' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <ul class='sequence-pagination'>
+      {% for slide in page.slides %}
+        {% if forloop.index == 1 %}
+          <li class='current'></li>
+        {% else %}
+          <li></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <ul class='sequence-canvas'>
+      {% for slide in page.slides %}
+        {% if forloop.index == 1 %}
+          {% assign class = "static" %}
+        {% else %}
+          {% assign class = '' %}
+        {% endif %}
+
+        <li class='frame {{class}}'>
+          <div class='bg' style='background-image: url({{slide.bg}});'></div>
+          {% if slide.infos %}
+            {% for info in slide.infos %}
+              <div class='info{{forloop.index}} {{info.animation}}' style=''>
+                <div class='row'>
+                  <div class='medium-10 large-8 columns'>
+                    <p class='fa fa-check' style='color: #333;'>{{info.text}}</p>
+                    <div class='spacing'></div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class='title {{slide.title.animation}}' style='color: rgb(255, 255, 255);'>
+              <div class='row'>
+                <div class='{{slide.title.class}} columns'>
+                  <h2>{{slide.title.text}}</h2>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          <div class='buttons-wrapper {{slide.buttons.animation}}' style=''>
+            <div class='row'>
+              <div class='{{slide.buttons.class}} columns'>
+                <div class='two spacing'></div>
+                {% for button in slide.buttons.items %}
+                  <a target="_blank" class='button {{button.class}}' href='{{button.url}}'>{{button.text}}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class='full'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <h4 style='color: #999'>Develop your city</h4>
+      <h2>Technology tools you can use</h2>
+      <div class='spacing'></div>
+      <p>City of Chicago has multiple technology tools that you can use to connect residents to the city. Robust open data can inform you of recent activity anywhere in the city, whether it is crime, licenses, or arriving buses. Some of our APIs also let you communicate to city officials, such as the Open311 API that lets you open service requests or the ClearPath API that lets users submit tips or see upcoming community meetings. This page connects you to the documentation to help developers create tools for their neighbors.</p>
+    </div>
+  </div>
+  <div class='three spacing'></div>
+</div>
+<div class='full' style='background: #C0E6F5'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <div class='mod modBoxedTextSlider'>
+        <div class='boxes'>
+          {% for box in page.boxes %}
+            <div class='box' style=''>
+              <i class='{{box.icon_class}}'></i>
+              <h4>{{box.title}}</h4>
+              <p>{{box.text}}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='four spacing'></div>
+</div>
+
+
+
+
+<div class='full'>
+  <div class='row'>
+    <div class='medium-6 columns'>
+      <img class="fadeinleft" width="500" height="340" alt="" src="images/Octocat-500-430.png" />
+    </div>
+    <div class='medium-6 columns'>
+      <div class='spacing'></div>
+      <h4 style='color: #999'>We love</h4>
+      <h2>Collaboration</h2>
+      <div class='spacing'></div>
+      <p>Visit the City of Chicago's GitHub page to see over a dozen open source projects maintained by the city. Many of sites and tools are used by residents every day and often used by other cities or researchers. You don't only help your city, but you also help your neighbors and other people.</p>
+      <div class='spacing'></div>
+      <a class='button small' href='https://www.github.com/Chicago'>Contribute</a>
+    </div>
+  </div>
+  <div class='four spacing'></div>
+  <div class='row'>
+    <div class='medium-6 columns'>
+      <div class='two spacing'></div>
+      <h4 style='color: #999'>Featured Project</h4>
+      <h2>Health Atlas</h2>
+      <div class='spacing'></div>
+      <p><a href="https://www.chicagohealthatlas.org/">Chicago Health Atlas</a> let's the public review, explore and compare health-related data over time and across communities. It displays over 160 health and health-related indicators provided by the city, non-profits, state, and federal data. Take a look at the <a href="https://github.com/smartchicago/chicago-atlas/issues">existing issues</a> for ideas or suggest your own.</p>
+      <div class='spacing'></div>
+      <a class='button small' href='https://www.chicagohealthatlas.org/'>Learn more</a>
+    </div>
+    <div class='medium-6 columns'>
+      <img class="fadeinright" width="500" height="400" alt="" src="images/healthatlas-desktop.png" />
+    </div>
+  </div>
+  <div class='four spacing'></div>
+</div>
+
+
+
+
+<div class='full parallax' style='background: #f5f5f5'>
+  <div class='row'>
+    {% for milestone in page.milestones %}
+      <div class='medium-3 large-3 columns right-border left-border'>
+        <div class='mod modMilestone no-icon'>
+          <strong data-from='{{milestone.from}}' data-to='{{milestone.to}}'>&nbsp;</strong>
+          <span>{{milestone.title}}</span>
+          <div class='spacing'></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class='four spacing'></div>
+</div>
